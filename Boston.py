@@ -12,7 +12,7 @@ import seaborn as sns
 sns.set_style("whitegrid")
 #-------------------------------------------------------------------------------
 check = True
-df = pd.read_csv('/Users/rahishah/Downloads/salary.csv')
+df = pd.read_csv('.../salary.csv')
 
 mules = df['yd']
 df['Years After Graduation'] = np.array(pd.cut(np.array(mules), [0,5,10,15,20,25,30,35,40], labels=['0 - 5','6 - 10','11 - 15','16 - 20','21 - 25','26 - 30','31 - 35','36 - 40']))
@@ -75,12 +75,9 @@ if(check):
     print ('The intercept for in income after graduation is',lm.intercept_)
     print ('The coefficient for income after graduation is',lm.coef_)
     print ('However, the coefficient for males is',lmm.coef_,'while the same for females is',lmf.coef_)
-    
+
 plt.figure()
 
 axis1 = sns.swarmplot(x = df["Years After Graduation"], y = df["sl"], hue = df["dg"])
 axis1.set_title('Distribution of Income after Graduation(Degree)')
-sns.plt.show()    
-    
-
-
+sns.plt.show()
